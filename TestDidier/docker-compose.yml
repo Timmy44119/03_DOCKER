@@ -36,8 +36,9 @@ services:
 #     - VIRTUAL_PORT=80
       LETSENCRYPT_HOST: "${INSTANCE_HTTP}"
 #     - LETSENCRYPT_EMAIL=${ADMIN_EMAIL}
-      DB_HOST: "psql"
-      DB_PORT: "5432"
-      DB_NAME: "${INSTANCE_NAME}_axr"
-      DB_USER: "timmy"
-      DB_PASSWORD: "Toolapp44119!"
+      SERVER_HOST: "psql"
+      SERVER_ADMIN_LOGIN: "timmy"
+      SERVER_ADMIN_PASS: "Toolapp44119!"
+      TARGET_DB_NAME: "${INSTANCE_NAME}_axr"
+      TARGET_USER: "toolapp"
+      TARGET_PASS: "Toolapp44!"
