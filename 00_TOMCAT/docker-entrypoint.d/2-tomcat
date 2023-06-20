@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "Lancement de tomcat !! Ne pas quitter ce processus, sinon, le container est mort !"

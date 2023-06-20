@@ -1,0 +1,16 @@
+version: "3.9"
+networks:
+  timmy_network:
+    name: timmy_network
+
+services:
+  psql:
+    image: "postgres:13.3"
+    container_name: psql
+    environment:
+      - POSTGRES_USER=timmy
+      - POSTGRES_PASSWORD=Toolapp44119!
+    restart: always
+    volumes:
+      - "./XX_DATA/var/lib/postgresql/data:/var/lib/postgresql/data"
+      - "./XX_DATA/var/log/postgresql:/var/log/postgresql"
