@@ -2,6 +2,7 @@ version: "3.9"
 networks:
   timmy_network:
       name: timmy_network
+      external: true
 
 services:
   ta-tomcat:
@@ -35,4 +36,5 @@ services:
       - DB_NAME=${INSTANCE_NAME}_axr
       - DB_USER=timmy
       - DB_PASSWORD=Toolapp44119!
-
+    networks:
+      - timmy_network

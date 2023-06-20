@@ -2,6 +2,7 @@ version: "3.9"
 networks:
   timmy_network:
     name: timmy_network
+    external: true
 
 services:
   psql:
@@ -14,3 +15,5 @@ services:
     volumes:
       - "./XX_DATA/var/lib/postgresql/data:/var/lib/postgresql/data"
       - "./XX_DATA/var/log/postgresql:/var/log/postgresql"
+    networks:
+      - timmy_network
