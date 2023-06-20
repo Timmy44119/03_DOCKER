@@ -12,6 +12,8 @@ services:
       - POSTGRES_USER=timmy
       - POSTGRES_PASSWORD=Toolapp44119!
     restart: always
+    ports:
+      - "5432:5432"
     volumes:
       - "./XX_DATA/var/lib/postgresql/data:/var/lib/postgresql/data"
       - "./XX_DATA/var/log/postgresql:/var/log/postgresql"
