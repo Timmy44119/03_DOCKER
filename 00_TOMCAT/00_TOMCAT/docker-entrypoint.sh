@@ -4,7 +4,9 @@ echo "Initialisation de PostGresql pour cette instance !"
 
 set -e
 
-psql -h $DB_HOST:$DB_PORT -v ON_ERROR_STOP=1 --username "$DB_USER" --dbname "$DB_NAME" <<-EOSQL
+export PGPASSWORD="$DB_PASSWORD"
+
+psql -h $DB_HOST -v ON_ERROR_STOP=1 --username "$DB_USER" <<-EOSQL
 
 	CREATE USER toolapp WITH PASSWORD 'Toolapp44!';
 	CREATE DATABASE $DB_NAME;
