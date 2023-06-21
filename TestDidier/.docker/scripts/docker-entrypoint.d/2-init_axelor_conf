@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "Start configuring axelor database access"
+
+# File to patch
+AXELOR_CONF_FILE="/usr/local/tomcat/axelor-config.properties"
+
+# Set SERVER_HOST
+sed -i "s/{{SERVER_HOST}}/${SERVER_HOST}/g" ${AXELOR_CONF_FILE}
+sed -i "s/{{TARGET_DB_NAME}}/${TARGET_DB_NAME}/g" ${AXELOR_CONF_FILE}
+sed -i "s/{{TARGET_USER}}/${TARGET_USER}/g" ${AXELOR_CONF_FILE}
+sed -i "s/{{TARGET_PASS}}/${TARGET_PASS}/g" ${AXELOR_CONF_FILE}
+
+echo "End configuring axelor database access"

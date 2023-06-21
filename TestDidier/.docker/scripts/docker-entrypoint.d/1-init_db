@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo "Start initialise new Instance on PSQL"
+
+export PGPASSWORD="${SERVER_ADMIN_PASS}"
+
+psql -h "${SERVER_HOST}" -U "${SERVER_ADMIN_LOGIN}" << EOF
+  CREATE USER ${TARGET_USER} WITH PASSWORD '${TARGET_PASS}';
+  CREATE DATABASE ${TARGET_DB_NAME};
+  GRANT ALL PRIVILEGES ON DATABASE ${TARGET_DB_NAME} TO ${TARGET_USER};
+EOF
+
+echo "End initialise new Instance on PSQL"
