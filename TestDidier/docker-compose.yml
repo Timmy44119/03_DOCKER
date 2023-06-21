@@ -41,3 +41,34 @@ services:
       TARGET_DB_NAME: "${INSTANCE_NAME}_axr"
       TARGET_USER: "toolapp"
       TARGET_PASS: "Toolapp44!"
+
+  tomcat-instance2:
+    image: "toolapp-axelor/tomcat:0.0.1"
+    build:
+      context: ".docker"
+    volumes: []
+#    - "./docker-entrypoint.d:/tmp/docker-entrypoint.d"
+#    - "./docker-entrypoint.sh:/docker-entrypoint-initdb.d/docker-entrypoint.sh"
+#    - "./XX_DATA/var/lib/tomcat:/var/lib/tomcat"
+#    - "./XX_DATA/var/log/tomcat:/var/log/tomcat"
+#    - "./XX_DATA/usr/local/tomcat/upload:/usr/local/tomcat/upload"
+#    - "./XX_DATA/usr/local/tomcat/reports:/usr/local/tomcat/reports"
+#    - "./XX_DATA/usr/local/tomcat/data-export:/usr/local/tomcat/data-export"
+#    - "./XX_DATA/usr/local/tomcat/logs:/usr/local/tomcat/logs"
+#    - "./XX_DATA/usr/local/tomcat/reports-gen:/usr/local/tomcat/reports-gen"
+#    - "./XX_DATA/usr/local/tomcat/templates:/usr/local/tomcat/templates"
+#    - "./XX_DATA/usr/local/tomcat/temp:/usr/local/tomcat/temp"
+#    restart: "always"
+    environment:
+      JAVA_OPTS: "-Daxelor.config=/usr/local/tomcat/axelor-config.properties"
+      # pour nginx proxy
+      VIRTUAL_HOST: "${INSTANCE_HTTP}"
+#     - VIRTUAL_PORT=80
+      LETSENCRYPT_HOST: "${INSTANCE_HTTP}"
+#     - LETSENCRYPT_EMAIL=${ADMIN_EMAIL}
+      SERVER_HOST: "psql"
+      SERVER_ADMIN_LOGIN: "timmy"
+      SERVER_ADMIN_PASS: "Toolapp44119!"
+      TARGET_DB_NAME: "${INSTANCE_NAME}_axr2"
+      TARGET_USER: "toolapp2"
+      TARGET_PASS: "Toolapp44!!!"
