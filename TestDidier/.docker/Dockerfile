@@ -2,6 +2,7 @@ FROM tomcat:9.0-jdk11-temurin-jammy
 
 COPY scripts/docker-entrypoint.sh /
 COPY scripts/docker-entrypoint.d/* /docker-entrypoint.d/
+COPY conf/axelor-config.properties /usr/local/tomcat/axelor-config.properties
 
 # Mise à jour des paquets et installation de Git
 RUN apt-get update && \

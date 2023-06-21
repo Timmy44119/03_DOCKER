@@ -15,8 +15,7 @@ services:
     image: "toolapp-axelor/tomcat:0.0.1"
     build:
       context: ".docker"
-    volumes:
-    - "./conf/axelor-config.properties:/usr/local/tomcat/axelor-config.properties:ro"
+    volumes: []
 #    - "./docker-entrypoint.d:/tmp/docker-entrypoint.d"
 #    - "./docker-entrypoint.sh:/docker-entrypoint-initdb.d/docker-entrypoint.sh"
 #    - "./XX_DATA/var/lib/tomcat:/var/lib/tomcat"
